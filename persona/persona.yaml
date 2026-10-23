@@ -1,7 +1,7 @@
 # Source of truth for the synthetic persona.
 # Illustrative simulation, synthetic data, not financial advice.
-# Fields under `given` come from the brief; fields under `proposed` are
-# defaults awaiting confirmation.
+# Fields under `given` come from the brief; fields under `agreed` were
+# proposed and then approved.
 
 given:
   label: Pooja
@@ -37,7 +37,7 @@ given:
     - salary
     - savings
 
-proposed:
+agreed:
   start_date: 2024-01-01
   horizon_years: 30
   tax:
@@ -45,7 +45,18 @@ proposed:
     tax_class: IV   # both spouses
     church_tax: false
     health_insurance: statutory
-  leftover_cash_to: savings
+  leftover_cash_to: savings   # net pay - spending - investing
+
+  # Pooja's half of the household, EUR per month. Grows with inflation
+  # (rate set in the simulation assumptions). Estimates, not data.
+  monthly_spending_eur:
+    rent_incl_heating_and_utilities: 900
+    electricity_internet_phone_broadcast_fee: 100
+    groceries: 400
+    transport: 60
+    insurance: 30
+    recreation_dining_travel: 450
+    clothes_and_other: 250   # total 2190
 
   # Modelled with the full rules. Figures come from consumer-finance summaries
   # of the Altersvorsorgereformgesetz (in force 2027), not the law text.
