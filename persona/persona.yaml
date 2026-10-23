@@ -1,0 +1,43 @@
+# Source of truth for the synthetic persona.
+# Illustrative simulation, synthetic data, not financial advice.
+# Fields under `given` come from the brief; fields under `proposed` are
+# defaults awaiting confirmation.
+
+given:
+  label: Kiran
+  age: 35
+  gender: unspecified
+  pronouns: they/them
+  origin: Indian
+  city: Berlin
+  currency: EUR
+
+  income:
+    gross_annual_eur: 85000
+    raise:
+      pct: 10
+      every_years: 3
+      mode: step
+
+  start_net_worth_eur:
+    etf: 15000
+    savings: 12000
+    gold: 3000   # total 30000
+
+  monthly_investing_eur:   # fixed, nominal
+    etf: 1200
+    gold: 200
+
+  bank_accounts:
+    - salary
+    - savings
+
+proposed:
+  start_date: 2026-01-01
+  horizon_years: 30
+  tax:
+    status: single
+    tax_class: 1
+    church_tax: false
+    health_insurance: statutory
+  leftover_cash_to: savings
