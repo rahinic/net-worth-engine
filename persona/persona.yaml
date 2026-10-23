@@ -4,10 +4,10 @@
 # defaults awaiting confirmation.
 
 given:
-  label: Kiran
+  label: Pooja
   age: 35
-  gender: unspecified
-  pronouns: they/them
+  gender: female
+  pronouns: she/her
   origin: Indian
   city: Berlin
   currency: EUR
