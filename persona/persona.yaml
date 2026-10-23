@@ -46,3 +46,20 @@ proposed:
     church_tax: false
     health_insurance: statutory
   leftover_cash_to: savings
+
+  # Modelled with the full rules. Figures come from consumer-finance summaries
+  # of the Altersvorsorgereformgesetz (in force 2027), not the law text.
+  altersvorsorgedepot_rules:
+    subsidy:
+      first_band_eur: 360
+      first_band_rate: 0.50
+      second_band_up_to_eur: 1800
+      second_band_rate: 0.25
+      max_per_year_eur: 540
+    cost_cap_pct_per_year: 1.0   # standard product; self-selected ETFs ~0.1-0.2
+    max_contribution_per_contract_eur: 6840   # subsidy only on first 1800
+    tax: at_payout_only          # no Vorabpauschale
+    open_items:
+      - special expense deduction (Sonderausgabenabzug)
+      - payout age, form and payout tax rate
+      - which funds sit inside the depot
