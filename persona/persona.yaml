@@ -10,6 +10,8 @@ given:
   pronouns: she/her
   origin: Indian
   city: Berlin
+  marital_status: married
+  spouse_income: similar   # synthetic, not modelled in detail
   currency: EUR
 
   income:
@@ -25,8 +27,11 @@ given:
     gold: 3000   # total 30000
 
   monthly_investing_eur:   # fixed, nominal
-    etf: 1200
+    etf: 1000
     gold: 200
+    altersvorsorgedepot:
+      amount: 150
+      from: 2027-01-01
 
   bank_accounts:
     - salary
@@ -36,8 +41,8 @@ proposed:
   start_date: 2024-01-01
   horizon_years: 30
   tax:
-    status: single
-    tax_class: 1
+    assessment: joint
+    tax_class: IV   # both spouses
     church_tax: false
     health_insurance: statutory
   leftover_cash_to: savings
