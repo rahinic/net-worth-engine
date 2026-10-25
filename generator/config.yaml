@@ -4,8 +4,9 @@ seed: 42
 # The statements start at the persona's start date and run to this date.
 statements_end: 2026-09-30
 
-# Placeholders, not yet approved. Inflation also scales costs and the tax brackets.
-inflation_per_year: 0.02
+# Inflation is the 10-year average from assumptions/inflation.yaml. It scales costs and
+# the tax brackets. Savings interest is a placeholder, not yet approved.
+inflation_per_year: 0.026
 savings_interest_per_year: 0.02
 
 # After each payday the current account is topped up from, or swept to, savings

@@ -39,7 +39,7 @@ Net pay is computed from gross by [`persona/tax.py`](persona/tax.py), a simplifi
 
 **Budget scaled to match:** at €50,000 gross, tax class IV, the function gives about **€2,690 net a month**, not the roughly €3,000 in the brief. The brief's outgoings (€600 ETF, €100 gold, €1,350 fixed, €950 variable, €3,000 in total) would have run a shortfall of about €310 a month. All four amounts were scaled by the same factor (about 0.897) so that outgoings equal net pay at the start.
 
-**What happens next:** costs grow with inflation, but pay and contributions are flat in nominal terms until a raise. So between raises the gap widens and is covered from savings. In the generated statements the savings account is about €600 lower by September 2026, before the first raise in January 2027.
+**What happens next:** costs grow with inflation, but pay and contributions are flat in nominal terms until a raise. So between raises the gap widens and is covered from savings. In the generated statements the savings account is about €950 lower by September 2026, before the first raise in January 2027.
 
 ## Bank statements
 
@@ -57,7 +57,9 @@ Both exports share one German-bank style: semicolons, ISO-8859-1, every field qu
 
 The mess, the same in both files: duplicated rows, changed case, spacing or umlauts in the text, a missing purpose on some card payments, and a few rows out of order.
 
-Assumptions that are placeholders, not yet approved: inflation of 2% a year and savings interest of 2% a year. The persona's €12,000 cash starts as €3,000 in the current account and €9,000 in savings, and after each payday the current account is topped up to or swept down to €3,000. Weekdays only, no public holidays.
+The three differences are written up in [`docs/data-cleaning-notes.md`](docs/data-cleaning-notes.md).
+
+Inflation is 2.6% a year, the average of German CPI over 2016 to 2025 ([`assumptions/inflation.yaml`](assumptions/inflation.yaml)). Savings interest of 2% a year is a placeholder, not yet approved. The persona's €12,000 cash starts as €3,000 in the current account and €9,000 in savings, and after each payday the current account is topped up to or swept down to €3,000. Weekdays only, no public holidays.
 
 ## Status
 

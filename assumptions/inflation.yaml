@@ -1,0 +1,18 @@
+# German consumer price inflation, annual average change on the previous year, percent.
+# Approved by the user: use the average over the last 10 years (2016-2025).
+# Illustrative simulation, not financial advice.
+annual_rates_pct:
+  2016: 0.5   # 2016-2020: secondary table (smart-rechner.de, from index values); verify against GENESIS-Online
+  2017: 1.5
+  2018: 1.8   # one source recalls 1.9; the average moves by 0.01 points
+  2019: 1.4
+  2020: 0.5
+  2021: 3.1   # 2021-2025: Destatis (press release 019, 16 January 2026)
+  2022: 6.9
+  2023: 5.9
+  2024: 2.2
+  2025: 2.2
+average_pct_per_year: 2.6   # compound 2.58, simple 2.60, rounded
+sources:
+  - https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/01/PD26_019_611.html
+  - https://www.smart-rechner.de/inflation/ratgeber/inflationsraten_deutschland.php

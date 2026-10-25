@@ -28,6 +28,15 @@ def test_deterministic():
     assert build_ledger(persona, cfg) == build_ledger(persona, cfg)
 
 
+def test_inflation_matches_the_approved_assumption():
+    import math
+    import yaml
+    _, cfg = load()
+    rates = yaml.safe_load(Path("assumptions/inflation.yaml").read_text())["annual_rates_pct"]
+    compound = math.prod(1 + v / 100 for v in rates.values()) ** (1 / len(rates)) - 1
+    assert len(rates) == 10 and abs(cfg["inflation_per_year"] - compound) < 0.0005
+
+
 def test_first_month_matches_persona():
     persona, cfg = load()
     jan = [r for r in build_ledger(persona, cfg) if (r["date"].year, r["date"].month) == (2024, 1)]
