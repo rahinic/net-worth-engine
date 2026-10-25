@@ -19,7 +19,7 @@ income:
     pct: 10
     every_years: 3
     mode: step          # nominal, applied at each third anniversary
-  # Approximate figure from the brief. The engine does not use it: net pay is
+  # Approximate figure from the brief, kept for reference. The engine does not use it: net pay is
   # computed from gross by persona/tax.py. Computed result for tax class IV is
   # about 2,690 per month, see README.
   net_monthly_target_eur: 3000
@@ -37,10 +37,13 @@ start_net_worth_eur:
   gold: 3000            # total 30000
 
 monthly_eur:
-  etf_savings_plan: 600
-  indian_gold_scheme: 100   # paid in EUR, converted to INR in the gold model
-  fixed_costs: 1350         # approximate; rent, utilities, insurance, phone
-  variable_costs: 950       # approximate; groceries, leisure, transport, other
+  # The brief had 600 / 100 / 1350 / 950 (total 3000). All four were scaled by
+  # the same factor (about 0.897) so the total equals the net pay computed by
+  # persona/tax.py at the start (about 2690), leaving no shortfall and no surplus.
+  etf_savings_plan: 538
+  indian_gold_scheme: 90    # paid in EUR, converted to INR in the gold model
+  fixed_costs: 1210         # approximate; rent, utilities, insurance, phone
+  variable_costs: 852       # approximate; groceries, leisure, transport, other
   # Costs grow with inflation (rate set in the simulation assumptions).
   # Contributions are flat in nominal terms, except in the growing scenario.
 

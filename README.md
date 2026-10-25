@@ -11,7 +11,7 @@ Illustrative simulation using synthetic data. Not financial advice.
 - Pooja, 35, Indian origin, lives in Berlin. Married, spouse on a similar income, tax class IV.
 - €50,000 gross, with +10% (nominal) every 3 years.
 - Starts with €30,000: ETFs €15,000, savings €12,000, gold €3,000.
-- Each month: €600 ETF savings plan, €100 Indian gold scheme, about €1,350 fixed costs and about €950 variable costs.
+- Each month: €538 ETF savings plan, €90 Indian gold scheme, about €1,210 fixed costs and about €852 variable costs, €2,690 in total.
 - Contributions stay flat in nominal terms.
 
 ### Scenarios
@@ -28,7 +28,7 @@ The return figures are not set yet.
 
 Net pay is computed from gross by [`persona/tax.py`](persona/tax.py), a simplified German tax and social-contribution function. Its docstring lists every simplification. Run the tests with `python3 persona/test_tax.py` from inside `persona/`.
 
-**Known gap:** at €50,000 gross, tax class IV, the function gives about **€2,690 net a month**, not the roughly €3,000 in the brief. Costs and contributions add up to €3,000, so the persona runs a shortfall of about €310 a month, paid from savings. Class IV with a similar-income spouse taxes the same as class I. Only tax class III would give about €3,020 net.
+**Budget scaled to match:** at €50,000 gross, tax class IV, the function gives about **€2,690 net a month**, not the roughly €3,000 in the brief. The brief's outgoings (€600 ETF, €100 gold, €1,350 fixed, €950 variable, €3,000 in total) would have run a shortfall of about €310 a month. All four amounts were scaled by the same factor (about 0.897) so that outgoings equal net pay at the start. Savings neither grow nor shrink at first. Raises lift net pay while contributions stay flat, so a surplus appears later and goes to the savings account.
 
 ## Status
 
