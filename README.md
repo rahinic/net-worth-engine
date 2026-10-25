@@ -29,7 +29,7 @@ The ETF savings plan runs through Trade Republic, whose costs are in [`assumptio
 
 ### Trading over time
 
-The weights above are the starting weights. In the first decade (2024 to 2033) she moves money between ETFs every two to four quarters, which shifts the weights. After that she stops, and four withdrawals of €10,000 to €50,000 follow in 2036, 2041, 2046 and 2051. Details and defaults are in [`assumptions/trading.yaml`](assumptions/trading.yaml). Both portfolios get the same dates and amounts.
+The weights above are the starting weights. In the first decade (2024 to 2033) she moves money between ETFs every two to four quarters, which shifts the weights. After that she stops, and four withdrawals of €10,000 to €50,000 follow in 2036, 2041, 2046 and 2051. Details and defaults are in [`assumptions/trading.yaml`](assumptions/trading.yaml). The dates and withdrawal amounts are fixed; which funds she switches between is random in each path. Both portfolios get the same draws.
 
 ### Scenarios
 
