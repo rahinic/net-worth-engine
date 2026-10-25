@@ -24,8 +24,7 @@ withdrawals:              # real life events that take money out of the portfoli
   amount_eur_range: [10000, 50000]
   rounded_to_eur: 1000
   sold_from: pro rata across all holdings, one order per fund
-  money_goes_to: not set yet
+  money_goes_to: spent   # leaves her net worth for good; shown as a separate 'withdrawn' line
 
 open_items:
-  - where the withdrawn money goes (savings account or spent)
   - Sparer-Pauschbetrag (tax-free allowance) for a married couple

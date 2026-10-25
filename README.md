@@ -92,6 +92,16 @@ At September 2026 the persona has about €50,000 at cost: €11,200 cash, €32
 
 GitHub Actions (`.github/workflows/ci.yml`) runs the tests, checks the generated data is up to date, and runs `dbt build`.
 
+## What is Monte Carlo?
+
+Nobody knows what markets will return, so a single forecast such as "7% a year" hides how uncertain the future is.
+A Monte Carlo simulation plays out Pooja's investing many times, here 10,000 times.
+Each run draws random yearly returns for every fund, using the expected return, volatility and correlations in `assumptions/`, so some runs have crashes and others booms.
+Each run also applies her contributions, switches, withdrawals, fund fees and German tax.
+The result is 10,000 possible outcomes for the same life, reported as a middle value and a range (5th to 95th percentile).
+Running the 2-ETF and 4-ETF portfolios on the same random draws shows how often one beats the other, and by how much.
+It is a simulation, not a prediction and not machine learning: nothing is learned from data, and the results are only as good as the assumptions.
+
 ## Status
 
 Done: persona version 3, the net-pay function, the bank-statement generator and the dbt cleaning models. Planned: ETF Monte Carlo and gold comparison. Results will be published at https://rahinic.github.io/net-worth/.
