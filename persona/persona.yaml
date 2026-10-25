@@ -9,6 +9,8 @@ persona:
   pronouns: she/her
   origin: Indian
   city: Berlin
+  marital_status: married
+  spouse_income: similar   # synthetic, not modelled in detail
   currency: EUR
 
 income:
@@ -18,12 +20,12 @@ income:
     every_years: 3
     mode: step          # nominal, applied at each third anniversary
   # Approximate figure from the brief. The engine does not use it: net pay is
-  # computed from gross by persona/tax.py. Computed result for tax class I is
+  # computed from gross by persona/tax.py. Computed result for tax class IV is
   # about 2,690 per month, see README.
   net_monthly_target_eur: 3000
 
 tax:
-  tax_class: I          # assumed single; the brief gave no marital status
+  tax_class: IV         # married, spouse on a similar income
   children: 0           # assumed, affects the care insurance rate
   church_tax: false
   health_insurance: statutory
