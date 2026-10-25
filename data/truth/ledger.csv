@@ -1418,43 +1418,43 @@ T01416,salary,2026-09-30,UMBUCHUNG,Umbuchung Tagesgeld,Eigenes Tagesgeldkonto,DE
 T01417,savings,2024-01-31,EINZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,700,sweep,900700
 T01418,savings,2024-02-29,EINZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,800,sweep,901500
 T01419,savings,2024-03-29,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-4400,sweep,897100
-T01420,savings,2024-03-29,ABSCHLUSS,Zinsabschluss Q1/2024,,,4486,interest,901586
-T01421,savings,2024-04-30,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-2000,sweep,899586
-T01422,savings,2024-05-31,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-1200,sweep,898386
-T01423,savings,2024-06-28,EINZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,5600,sweep,903986
-T01424,savings,2024-06-28,ABSCHLUSS,Zinsabschluss Q2/2024,,,4520,interest,908506
-T01425,savings,2024-07-31,EINZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,5900,sweep,914406
-T01426,savings,2024-08-30,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-5200,sweep,909206
-T01427,savings,2024-09-30,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-6400,sweep,902806
-T01428,savings,2024-09-30,ABSCHLUSS,Zinsabschluss Q3/2024,,,4514,interest,907320
-T01429,savings,2024-10-31,EINZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,5300,sweep,912620
-T01430,savings,2024-12-31,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-6600,sweep,906020
-T01431,savings,2024-12-31,ABSCHLUSS,Zinsabschluss Q4/2024,,,4530,interest,910550
-T01432,savings,2025-01-31,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-2800,sweep,907750
-T01433,savings,2025-02-28,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-5700,sweep,902050
-T01434,savings,2025-03-31,EINZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,2000,sweep,904050
-T01435,savings,2025-03-31,ABSCHLUSS,Zinsabschluss Q1/2025,,,4520,interest,908570
-T01436,savings,2025-04-30,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-4600,sweep,903970
-T01437,savings,2025-05-30,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-5100,sweep,898870
-T01438,savings,2025-06-30,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-7500,sweep,891370
-T01439,savings,2025-06-30,ABSCHLUSS,Zinsabschluss Q2/2025,,,4457,interest,895827
-T01440,savings,2025-07-31,EINZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,200,sweep,896027
-T01441,savings,2025-08-29,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-4800,sweep,891227
-T01442,savings,2025-09-30,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-8900,sweep,882327
-T01443,savings,2025-09-30,ABSCHLUSS,Zinsabschluss Q3/2025,,,4412,interest,886739
-T01444,savings,2025-10-31,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-4200,sweep,882539
-T01445,savings,2025-11-28,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-4300,sweep,878239
-T01446,savings,2025-12-31,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-8300,sweep,869939
-T01447,savings,2025-12-31,ABSCHLUSS,Zinsabschluss Q4/2025,,,4350,interest,874289
-T01448,savings,2026-01-30,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-10300,sweep,863989
-T01449,savings,2026-02-27,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-9800,sweep,854189
-T01450,savings,2026-03-31,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-12400,sweep,841789
-T01451,savings,2026-03-31,ABSCHLUSS,Zinsabschluss Q1/2026,,,4209,interest,845998
-T01452,savings,2026-04-30,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-5300,sweep,840698
-T01453,savings,2026-05-29,EINZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,600,sweep,841298
-T01454,savings,2026-06-30,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-14700,sweep,826598
-T01455,savings,2026-06-30,ABSCHLUSS,Zinsabschluss Q2/2026,,,4133,interest,830731
-T01456,savings,2026-07-31,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-6500,sweep,824231
-T01457,savings,2026-08-31,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-10100,sweep,814131
-T01458,savings,2026-09-30,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-13200,sweep,800931
-T01459,savings,2026-09-30,ABSCHLUSS,Zinsabschluss Q3/2026,,,4005,interest,804936
+T01420,savings,2024-03-29,ABSCHLUSS,Zinsabschluss Q1/2024,,,6168,interest,903268
+T01421,savings,2024-04-30,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-2000,sweep,901268
+T01422,savings,2024-05-31,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-1200,sweep,900068
+T01423,savings,2024-06-28,EINZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,5600,sweep,905668
+T01424,savings,2024-06-28,ABSCHLUSS,Zinsabschluss Q2/2024,,,6226,interest,911894
+T01425,savings,2024-07-31,EINZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,5900,sweep,917794
+T01426,savings,2024-08-30,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-5200,sweep,912594
+T01427,savings,2024-09-30,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-6400,sweep,906194
+T01428,savings,2024-09-30,ABSCHLUSS,Zinsabschluss Q3/2024,,,6230,interest,912424
+T01429,savings,2024-10-31,EINZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,5300,sweep,917724
+T01430,savings,2024-12-31,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-6600,sweep,911124
+T01431,savings,2024-12-31,ABSCHLUSS,Zinsabschluss Q4/2024,,,6264,interest,917388
+T01432,savings,2025-01-31,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-2800,sweep,914588
+T01433,savings,2025-02-28,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-5700,sweep,908888
+T01434,savings,2025-03-31,EINZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,2000,sweep,910888
+T01435,savings,2025-03-31,ABSCHLUSS,Zinsabschluss Q1/2025,,,6262,interest,917150
+T01436,savings,2025-04-30,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-4600,sweep,912550
+T01437,savings,2025-05-30,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-5100,sweep,907450
+T01438,savings,2025-06-30,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-7500,sweep,899950
+T01439,savings,2025-06-30,ABSCHLUSS,Zinsabschluss Q2/2025,,,6187,interest,906137
+T01440,savings,2025-07-31,EINZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,200,sweep,906337
+T01441,savings,2025-08-29,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-4800,sweep,901537
+T01442,savings,2025-09-30,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-8900,sweep,892637
+T01443,savings,2025-09-30,ABSCHLUSS,Zinsabschluss Q3/2025,,,6137,interest,898774
+T01444,savings,2025-10-31,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-4200,sweep,894574
+T01445,savings,2025-11-28,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-4300,sweep,890274
+T01446,savings,2025-12-31,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-8300,sweep,881974
+T01447,savings,2025-12-31,ABSCHLUSS,Zinsabschluss Q4/2025,,,6064,interest,888038
+T01448,savings,2026-01-30,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-10300,sweep,877738
+T01449,savings,2026-02-27,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-9800,sweep,867938
+T01450,savings,2026-03-31,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-12400,sweep,855538
+T01451,savings,2026-03-31,ABSCHLUSS,Zinsabschluss Q1/2026,,,5882,interest,861420
+T01452,savings,2026-04-30,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-5300,sweep,856120
+T01453,savings,2026-05-29,EINZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,600,sweep,856720
+T01454,savings,2026-06-30,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-14700,sweep,842020
+T01455,savings,2026-06-30,ABSCHLUSS,Zinsabschluss Q2/2026,,,5789,interest,847809
+T01456,savings,2026-07-31,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-6500,sweep,841309
+T01457,savings,2026-08-31,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-10100,sweep,831209
+T01458,savings,2026-09-30,AUSZAHLUNG,Umbuchung Girokonto,Eigenes Girokonto,DE00 0000 0000 0000 0001 01,-13200,sweep,818009
+T01459,savings,2026-09-30,ABSCHLUSS,Zinsabschluss Q3/2026,,,5624,interest,823633

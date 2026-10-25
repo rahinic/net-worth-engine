@@ -5,9 +5,9 @@ seed: 42
 statements_end: 2026-09-30
 
 # Inflation is the 10-year average from assumptions/inflation.yaml. It scales costs and
-# the tax brackets. Savings interest is a placeholder, not yet approved.
+# the tax brackets. Savings interest of 2.75% a year was set by the user.
 inflation_per_year: 0.026
-savings_interest_per_year: 0.02
+savings_interest_per_year: 0.0275
 
 # After each payday the current account is topped up from, or swept to, savings
 # so it holds this much. The persona's 12000 of cash starts split the same way.
