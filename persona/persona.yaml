@@ -47,8 +47,9 @@ monthly_eur:
   # Costs grow with inflation (rate set in the simulation assumptions).
   # Contributions are flat in nominal terms, except in the growing scenario.
 
-# The monthly ETF savings plan is split by these weights. The 15000 of
+# Starting weights. The monthly ETF savings plan is split by them, and the 15000 of
 # starting ETFs is assumed to be held in the same weights, in both portfolios.
+# The weights then change through switches, see assumptions/trading.yaml.
 portfolios:
   two_etf:
     description: World plus S&P 500

@@ -1,0 +1,31 @@
+# How Pooja trades the ETF portfolios over time. Illustrative simulation, not financial advice.
+# My reading of the user's description; the numbers in brackets are my defaults, to be adjusted.
+# Dates and amounts are drawn once with a fixed seed. They are the same for both portfolios
+# and for all 10,000 paths, so the comparison is fair.
+# Every sale realises gains, so German tax applies, and each order costs 1.00 (costs.yaml).
+
+phase_1_switching:        # learning phase: moving money between ETFs
+  from: 2024-01-01
+  to: 2033-12-31
+  every_quarters: [2, 4]            # a switch every 2 to 4 quarters
+  amount_moved_pct_of_portfolio: [5, 15]
+  weight_shift_points: [2.5, 7.5]   # target weight moved from one fund to another
+  note: >
+    The weights in persona.yaml are the starting weights. Each switch sells one fund and buys
+    another (2 orders), and the monthly savings plan follows the new weights from then on.
+    The 2-ETF portfolio switches between World and S&P 500 only.
+
+phase_2_quiet:
+  from: 2034-01-01
+  note: no more switching; the weights stay as they were at the end of phase 1
+
+withdrawals:              # real life events that take money out of the portfolio
+  years: [2036, 2041, 2046, 2051]
+  amount_eur_range: [10000, 50000]
+  rounded_to_eur: 1000
+  sold_from: pro rata across all holdings, one order per fund
+  money_goes_to: not set yet
+
+open_items:
+  - where the withdrawn money goes (savings account or spent)
+  - Sparer-Pauschbetrag (tax-free allowance) for a married couple

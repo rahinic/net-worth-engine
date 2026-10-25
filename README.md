@@ -27,6 +27,10 @@ The monthly ETF savings plan is split by these weights. The starting €15,000 i
 
 The ETF savings plan runs through Trade Republic, whose costs are in [`assumptions/costs.yaml`](assumptions/costs.yaml): €0 to execute a savings plan, €1 per manual order (rebalancing, selling), no custody fee. Each fund's own yearly fee (TER) is separate and sits inside the fund's price: World 0.20%, S&P 500 0.07%, Emerging Markets 0.18%, AI & Big Data 0.35%, Gold Miners 0.55%, all estimates. Spreads are not modelled yet because no sourced figure was found.
 
+### Trading over time
+
+The weights above are the starting weights. In the first decade (2024 to 2033) she moves money between ETFs every two to four quarters, which shifts the weights. After that she stops, and four withdrawals of €10,000 to €50,000 follow in 2036, 2041, 2046 and 2051. Details and defaults are in [`assumptions/trading.yaml`](assumptions/trading.yaml). Both portfolios get the same dates and amounts.
+
 ### Scenarios
 
 | Scenario | Contributions | Returns |
