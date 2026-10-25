@@ -102,6 +102,16 @@ The result is 10,000 possible outcomes for the same life, reported as a middle v
 Running the 2-ETF and 4-ETF portfolios on the same random draws shows how often one beats the other, and by how much.
 It is a simulation, not a prediction and not machine learning: nothing is learned from data, and the results are only as good as the assumptions.
 
+## What is correlation?
+
+Correlation is a number from -1 to +1 that says how much two funds move together.
++1 means they always move the same way, 0 means unrelated, and -1 means opposite.
+World and S&P 500 are about 0.97: nearly the same thing, since the US is most of the World index.
+Gold miners and World are about 0.4: they move together only some of the time, so mixing them smooths the ride.
+In the Monte Carlo, correlation decides whether the funds crash together in the random runs.
+High correlations mean the 4-ETF mix is less diversified than it looks; low ones mean smoother outcomes.
+In a real crash correlations tend to rise, so the calm-period estimates in [`assumptions/correlations.yaml`](assumptions/correlations.yaml) flatter diversification.
+
 ## Status
 
 Done: persona version 3, the net-pay function, the bank-statement generator and the dbt cleaning models. Planned: ETF Monte Carlo and gold comparison. Results will be published at https://rahinic.github.io/net-worth/.

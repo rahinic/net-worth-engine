@@ -1,0 +1,15 @@
+# Correlations between the funds' yearly returns. Illustrative simulation, not financial advice.
+# All are my estimates, no sources found. Approved by the user.
+# The matrix is valid for simulation (checked: all eigenvalues are positive).
+funds: [msci_world, sp500, emerging_markets, ai_and_big_data, gold_miners_etf]
+basis: estimate
+matrix:
+  #  world  sp500   em    ai   miners
+  - [1.00, 0.97, 0.80, 0.90, 0.40]   # msci_world
+  - [0.97, 1.00, 0.75, 0.90, 0.35]   # sp500
+  - [0.80, 0.75, 1.00, 0.75, 0.45]   # emerging_markets
+  - [0.90, 0.90, 0.75, 1.00, 0.30]   # ai_and_big_data
+  - [0.40, 0.35, 0.45, 0.30, 1.00]   # gold_miners_etf
+note: >
+  In a real crash correlations tend to rise, so calm-period figures flatter diversification.
+  The gold miners are also tied to the simulated gold price in the gold model.

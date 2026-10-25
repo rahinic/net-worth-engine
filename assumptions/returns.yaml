@@ -54,6 +54,4 @@ funds:
       - https://www.vaneck.com/library/vaneck-vectors-etfs/gdx-fact-sheet-pdf/?vecs=true
       - https://dividend.watch/symbol/GDX-NYSE
 
-open_items:
-  - correlations between the funds
-  - rebalancing policy
+open_items: []   # correlations are in correlations.yaml, costs in costs.yaml, trading in trading.yaml
