@@ -1,76 +1,62 @@
-# Source of truth for the synthetic persona.
+# Source of truth for the synthetic persona, version 3.
 # Illustrative simulation, synthetic data, not financial advice.
-# Fields under `given` come from the brief; fields under `agreed` were
-# proposed and then approved.
+version: 3
 
-given:
+persona:
   label: Pooja
   age: 35
   gender: female
   pronouns: she/her
   origin: Indian
   city: Berlin
-  marital_status: married
-  spouse_income: similar   # synthetic, not modelled in detail
   currency: EUR
 
-  income:
-    gross_annual_eur: 85000
-    raise:
-      pct: 10
-      every_years: 3
-      mode: step
+income:
+  gross_annual_eur: 50000
+  raise:
+    pct: 10
+    every_years: 3
+    mode: step          # nominal, applied at each third anniversary
+  # Approximate figure from the brief. The engine does not use it: net pay is
+  # computed from gross by persona/tax.py. Computed result for tax class I is
+  # about 2,690 per month, see README.
+  net_monthly_target_eur: 3000
 
-  start_net_worth_eur:
-    etf: 15000
-    savings: 12000
-    gold: 3000   # total 30000
+tax:
+  tax_class: I          # assumed single; the brief gave no marital status
+  children: 0           # assumed, affects the care insurance rate
+  church_tax: false
+  health_insurance: statutory
+  function: persona/tax.py
 
-  monthly_investing_eur:   # fixed, nominal
-    etf: 1000
-    gold: 200
-    altersvorsorgedepot:
-      amount: 150
-      from: 2027-01-01
+start_net_worth_eur:
+  etf: 15000
+  savings: 12000
+  gold: 3000            # total 30000
 
-  bank_accounts:
-    - salary
-    - savings
+monthly_eur:
+  etf_savings_plan: 600
+  indian_gold_scheme: 100   # paid in EUR, converted to INR in the gold model
+  fixed_costs: 1350         # approximate; rent, utilities, insurance, phone
+  variable_costs: 950       # approximate; groceries, leisure, transport, other
+  # Costs grow with inflation (rate set in the simulation assumptions).
+  # Contributions are flat in nominal terms, except in the growing scenario.
 
-agreed:
+scenarios:
+  - id: flat_historical
+    contributions: flat_nominal
+    returns: historical
+  - id: flat_conservative
+    contributions: flat_nominal
+    returns: conservative       # historical minus 2 percentage points
+  - id: growing_historical
+    contributions: grow_with_salary   # ETF and gold rise 10% at each raise
+    returns: historical
+
+simulation:
   start_date: 2024-01-01
   horizon_years: 30
-  tax:
-    assessment: joint
-    tax_class: IV   # both spouses
-    church_tax: false
-    health_insurance: statutory
-  leftover_cash_to: savings   # net pay - spending - investing
+  leftover_cash_to: savings     # net pay - costs - contributions; negative draws savings down
 
-  # Pooja's half of the household, EUR per month. Grows with inflation
-  # (rate set in the simulation assumptions). Estimates, not data.
-  monthly_spending_eur:
-    rent_incl_heating_and_utilities: 900
-    electricity_internet_phone_broadcast_fee: 100
-    groceries: 400
-    transport: 60
-    insurance: 30
-    recreation_dining_travel: 450
-    clothes_and_other: 250   # total 2190
-
-  # Modelled with the full rules. Figures come from consumer-finance summaries
-  # of the Altersvorsorgereformgesetz (in force 2027), not the law text.
-  altersvorsorgedepot_rules:
-    subsidy:
-      first_band_eur: 360
-      first_band_rate: 0.50
-      second_band_up_to_eur: 1800
-      second_band_rate: 0.25
-      max_per_year_eur: 540
-    cost_cap_pct_per_year: 1.0   # standard product; self-selected ETFs ~0.1-0.2
-    max_contribution_per_contract_eur: 6840   # subsidy only on first 1800
-    tax: at_payout_only          # no Vorabpauschale
-    open_items:
-      - special expense deduction (Sonderausgabenabzug)
-      - payout age, form and payout tax rate
-      - which funds sit inside the depot
+# Parked from version 2, not part of version 3: the Altersvorsorgedepot
+# (150 per month from 2027) and its subsidy rules are in the git history.
