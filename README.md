@@ -37,8 +37,28 @@ Return and volatility figures are in [`assumptions/returns.yaml`](assumptions/re
 
 Net pay is computed from gross by [`persona/tax.py`](persona/tax.py), a simplified German tax and social-contribution function. Its docstring lists every simplification. Run the tests with `python3 persona/test_tax.py` from inside `persona/`.
 
-**Budget scaled to match:** at €50,000 gross, tax class IV, the function gives about **€2,690 net a month**, not the roughly €3,000 in the brief. The brief's outgoings (€600 ETF, €100 gold, €1,350 fixed, €950 variable, €3,000 in total) would have run a shortfall of about €310 a month. All four amounts were scaled by the same factor (about 0.897) so that outgoings equal net pay at the start. Savings neither grow nor shrink at first. Raises lift net pay while contributions stay flat, so a surplus appears later and goes to the savings account.
+**Budget scaled to match:** at €50,000 gross, tax class IV, the function gives about **€2,690 net a month**, not the roughly €3,000 in the brief. The brief's outgoings (€600 ETF, €100 gold, €1,350 fixed, €950 variable, €3,000 in total) would have run a shortfall of about €310 a month. All four amounts were scaled by the same factor (about 0.897) so that outgoings equal net pay at the start.
+
+**What happens next:** costs grow with inflation, but pay and contributions are flat in nominal terms until a raise. So between raises the gap widens and is covered from savings. In the generated statements the savings account is about €600 lower by September 2026, before the first raise in January 2027.
+
+## Bank statements
+
+`python3 -m generator.run` writes two messy bank exports and the answer key to `data/` (already generated and committed). Settings are in [`generator/config.yaml`](generator/config.yaml). Run the tests with `python3 -m generator.test_generator`.
+
+- `data/raw/`: the two exports, salary account and savings account, January 2024 to September 2026.
+- `data/truth/ledger.csv`: the clean ledger with running balances.
+- `data/truth/mess_log.csv`: every injected problem and the row it is on.
+
+Both exports share one German-bank style: semicolons, ISO-8859-1, every field quoted, amounts like `1.234,56`, newest first. They differ in exactly three ways:
+
+1. Dates: `31.01.2024` in the salary file, `2024-01-31` in the savings file.
+2. Amounts: one signed `Betrag` column in the salary file, separate `Soll` and `Haben` columns in the savings file.
+3. Preamble: the savings file has three metadata lines and a blank line above the header.
+
+The mess, the same in both files: duplicated rows, changed case, spacing or umlauts in the text, a missing purpose on some card payments, and a few rows out of order.
+
+Assumptions that are placeholders, not yet approved: inflation of 2% a year and savings interest of 2% a year. The persona's €12,000 cash starts as €3,000 in the current account and €9,000 in savings, and after each payday the current account is topped up to or swept down to €3,000. Weekdays only, no public holidays.
 
 ## Status
 
-Done: persona version 3 and the net-pay function. Planned: the bank-statement generator, dbt models, ETF Monte Carlo and gold comparison. Results will be published at https://rahinic.github.io/net-worth/.
+Done: persona version 3, the net-pay function and the bank-statement generator. Planned: dbt models, ETF Monte Carlo and gold comparison. Results will be published at https://rahinic.github.io/net-worth/.

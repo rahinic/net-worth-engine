@@ -1,0 +1,52 @@
+# Generator settings. Illustrative simulation, synthetic data.
+seed: 42
+
+# The statements start at the persona's start date and run to this date.
+statements_end: 2026-09-30
+
+# Placeholders, not yet approved. Inflation also scales costs and the tax brackets.
+inflation_per_year: 0.02
+savings_interest_per_year: 0.02
+
+# After each payday the current account is topped up from, or swept to, savings
+# so it holds this much. The persona's 12000 of cash starts split the same way.
+current_account_target_eur: 3000
+
+salary_iban: DE00 0000 0000 0000 0001 01
+savings_iban: DE00 0000 0000 0000 0002 02
+
+# Fixed costs, 1210.00 in total at the start. `index`: monthly = grows with
+# inflation every month, yearly = steps up each January, none = stays flat.
+fixed_costs:
+  - {name: rent,      text: DAUERAUFTRAG, counterparty: Hausverwaltung Mustermann, purpose: "Miete inkl. Nebenkosten {mm}/{yyyy}", eur: 960.00, day: 1,  index: yearly}
+  - {name: power,     text: LASTSCHRIFT,  counterparty: Stadtwerke Beispiel,       purpose: "Abschlag Strom Kd-Nr 8841007",        eur: 70.00,  day: 3,  index: monthly}
+  - {name: internet,  text: LASTSCHRIFT,  counterparty: Telekom Beispiel,          purpose: "Rechnung Internet und Mobilfunk",      eur: 65.00,  day: 5,  index: monthly}
+  - {name: broadcast, text: LASTSCHRIFT,  counterparty: Beitragsservice,           purpose: "Rundfunkbeitrag",                      eur: 18.36,  day: 6,  index: none}
+  - {name: streaming, text: LASTSCHRIFT,  counterparty: Streaming Beispiel,        purpose: "Abo Streaming",                        eur: 13.99,  day: 12, index: none}
+  - {name: gym,       text: LASTSCHRIFT,  counterparty: Fitness Beispiel,          purpose: "Mitgliedsbeitrag",                     eur: 42.65,  day: 14, index: monthly}
+  - {name: insurance, text: LASTSCHRIFT,  counterparty: Beispiel Versicherung AG,  purpose: "Haftpflicht und Hausrat",              eur: 40.00,  day: 15, index: monthly}
+
+# Contributions are flat in nominal terms. The amounts come from the persona.
+contributions:
+  etf:  {text: DAUERAUFTRAG, counterparty: Beispiel Broker,        purpose: "ETF Sparplan {mm}/{yyyy}",  day: 2}
+  gold: {text: DAUERAUFTRAG, counterparty: Gold Sparplan Indien,   purpose: "Gold-Sparplan {mm}/{yyyy}", day: 2}
+
+# Variable costs: the monthly total gets noise, then is split by share into
+# card payments (or cash withdrawals) on random days.
+variable_cost_noise: 0.06
+variable_categories:
+  groceries: {share: 0.38, count: [9, 13], text: KARTENZAHLUNG,     merchants: [REWE, EDEKA, LIDL, ALDI SUED, DM Drogerie]}
+  dining:    {share: 0.14, count: [4, 7],  text: KARTENZAHLUNG,     merchants: [Restaurant Zur Linde, Cafe Central, Doener Haus, Bäckerei Schmidt]}
+  transport: {share: 0.09, count: [3, 5],  text: KARTENZAHLUNG,     merchants: [BVG Ticket, DB Vertrieb, Tankstelle, Fahrrad Werkstatt]}
+  leisure:   {share: 0.10, count: [2, 4],  text: KARTENZAHLUNG,     merchants: [Kino Beispiel, Eventim, Buchhandlung Nord]}
+  shopping:  {share: 0.12, count: [2, 4],  text: KARTENZAHLUNG,     merchants: [Zalando, Modehaus Beispiel, Amazon, Saturn]}
+  health:    {share: 0.05, count: [1, 2],  text: KARTENZAHLUNG,     merchants: [Apotheke am Markt, Zahnarzt Zuzahlung]}
+  cash:      {share: 0.08, count: [2, 3],  text: BARGELDAUSZAHLUNG, merchants: [Geldautomat]}
+  other:     {share: 0.04, count: [1, 2],  text: KARTENZAHLUNG,     merchants: [Post, Sonstiges]}
+
+# Mess injected into the exports only, never into the truth ledger.
+mess:
+  duplicate_rate: 0.004
+  text_noise_rate: 0.15
+  missing_purpose_rate: 0.03
+  out_of_order_rate: 0.01
