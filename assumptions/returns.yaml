@@ -1,0 +1,61 @@
+# ETF return assumptions. Illustrative simulation, not financial advice.
+# Annual, nominal, before fees (TER) and tax. Approved by the user.
+# `basis` says how far to trust each number:
+#   sourced          taken from a cited factsheet or study
+#   sourced_adjusted a cited figure that was changed, see note
+#   estimate         my judgement, no usable source found
+# Conservative case = historical return minus 2 percentage points, same volatility.
+
+conservative_shift_pct_points: -2.0
+
+funds:
+  msci_world:
+    return_historical: 0.075
+    volatility: 0.15
+    basis: sourced
+    note: >
+      Worldwide equities returned 5.2% a year after inflation, 1900-2024
+      (UBS Global Investment Returns Yearbook 2025); about 2.3% inflation added.
+      Ten-year volatility 13.2% (MSCI World factsheet), rounded up for the long run.
+    sources:
+      - https://www.ubs.com/global/en/investment-bank/insights-and-data/2025/global-investment-returns-yearbook-2025.html
+      - https://www.msci.com/documents/10199/020ea33f-2349-452a-95a8-8ea07f5a0a22
+  sp500:
+    return_historical: 0.085
+    volatility: 0.16
+    basis: estimate
+  emerging_markets:
+    return_historical: 0.09
+    volatility: 0.20
+    basis: sourced_adjusted
+    note: >
+      MSCI Emerging Markets returned 10.54% a year since 1987 (USD, gross), ten-year
+      volatility 17.5%, maximum drawdown 65% in 2007-08. Return shaded down because
+      of the early boom years and USD versus EUR.
+    sources:
+      - https://www.msci.com/documents/10199/1493b63f-1ce8-418e-a82d-4aae72951f27
+  ai_and_big_data:
+    return_historical: 0.08
+    volatility: 0.24
+    basis: estimate
+    note: Funds launched in 2019 and 2024, too short for a long-run figure.
+    sources:
+      - https://etf.dws.com/en-us/AssetDownload/Index/34371bf3-2d34-45f9-ba79-5c90a89bf4f0/XAIX-Fact-Sheet.pdf
+  gold_miners_etf:
+    return_historical: 0.05
+    volatility: 0.35
+    basis: sourced
+    note: >
+      VanEck Gold Miners ETF (GDX): 4.95% a year since May 2006 (USD, NAV), but about
+      15.8% over the last ten years, so the figure depends heavily on the period.
+      Volatility about 35% over three years. In the model its returns follow the
+      simulated gold price, so the ETF and the physical gold scheme see the same path.
+    sources:
+      - https://www.vaneck.com/library/vaneck-vectors-etfs/gdx-fact-sheet-pdf/?vecs=true
+      - https://dividend.watch/symbol/GDX-NYSE
+
+open_items:
+  - correlations between the funds
+  - TER per fund
+  - rebalancing policy
+  - inflation rate

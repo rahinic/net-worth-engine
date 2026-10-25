@@ -31,7 +31,7 @@ The monthly ETF savings plan is split by these weights. The starting €15,000 i
 | `flat_conservative` | Flat in nominal terms | Historical minus 2 points |
 | `growing_historical` | Grow with salary (+10% at each raise) | Historical |
 
-The return figures are not set yet.
+Return and volatility figures are in [`assumptions/returns.yaml`](assumptions/returns.yaml), each marked as sourced, adjusted or an estimate.
 
 ### Net pay
 
