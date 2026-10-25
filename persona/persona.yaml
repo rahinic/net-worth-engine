@@ -52,7 +52,9 @@ monthly_eur:
 portfolios:
   two_etf:
     description: World plus S&P 500
-    weights: not set yet
+    weights:
+      msci_world: 0.50
+      sp500: 0.50
   four_etf_thematic:
     description: broad world, emerging markets and two themes
     weights:

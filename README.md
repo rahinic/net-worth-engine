@@ -18,7 +18,7 @@ Illustrative simulation using synthetic data. Not financial advice.
 
 | Portfolio | Funds |
 |---|---|
-| 2 ETFs | MSCI World and S&P 500, weights not set yet |
+| 2 ETFs | MSCI World 50%, S&P 500 50% |
 | 4 ETFs (thematic) | MSCI World 50%, Emerging Markets 15%, AI & Big Data 17.5%, Renewable Energy 17.5% |
 
 The monthly ETF savings plan is split by these weights. The starting €15,000 is assumed to be held in the same weights. The AI & Big Data and Renewable Energy funds have short histories, so their return figures will be mostly estimates.
