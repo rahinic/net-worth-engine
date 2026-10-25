@@ -1,0 +1,24 @@
+# What Trade Republic charges, as the broker for the ETF savings plan.
+# Illustrative simulation, not financial advice.
+# Taken from comparison sites and Trade Republic's price list (Feb 2026), not checked against
+# the current price list. Fund fees (TER) are separate: they sit inside each fund's price.
+broker: Trade Republic
+
+savings_plan_execution_fee_eur: 0.00   # ETF savings plans are free of charge
+manual_order_fee_eur: 1.00             # buying or selling by hand, e.g. rebalancing or selling at retirement
+custody_fee_pct_per_year: 0.0          # no custody or inactivity fee
+withdrawal_fee_eur: 7.00               # transfer to a bank account; one source only, not modelled yet
+
+# In the model: the monthly ETF plan costs nothing to execute. Rebalancing costs 1.00 per
+# order, and the final sale of each holding costs 1.00.
+# Trade Republic also deducts German tax automatically (Abgeltungsteuer, Vorabpauschale).
+
+not_modelled:
+  - spread and trading-venue costs on each purchase (no sourced figure)
+  - cash interest on the broker account (about 2.0 to 2.25%, sources disagree; her savings sit in the bank)
+
+sources:
+  - https://zendepot.de/depot/trade-republic-kosten
+  - https://justetf.com/en/etf-sparplan/sparplan-vergleich.html
+  - https://assets.traderepublic.com/documents/NL/FURTHER_INFORMATION_PRICE_LIST_20260210134114.pdf
+  - https://quantroutine.com/brokers/trade-republic-fees-explained/

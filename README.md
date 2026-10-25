@@ -23,6 +23,10 @@ Illustrative simulation using synthetic data. Not financial advice.
 
 The monthly ETF savings plan is split by these weights. The starting €15,000 is assumed to be held in the same weights. The AI & Big Data fund has a short history, and the gold-miners fund depends on the gold price, so their return figures will be mostly estimates.
 
+### Costs
+
+The ETF savings plan runs through Trade Republic, whose costs are in [`assumptions/costs.yaml`](assumptions/costs.yaml): €0 to execute a savings plan, €1 per manual order (rebalancing, selling), no custody fee. Each fund's own yearly fee (TER) is separate and sits inside the fund's price. Spreads are not modelled yet because no sourced figure was found.
+
 ### Scenarios
 
 | Scenario | Contributions | Returns |
