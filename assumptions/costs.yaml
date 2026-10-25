@@ -1,6 +1,6 @@
 # What Trade Republic charges, as the broker for the ETF savings plan.
 # Illustrative simulation, not financial advice.
-# Taken from comparison sites and Trade Republic's price list (Feb 2026), not checked against
+# Broker costs are taken from comparison sites and Trade Republic's price list (Feb 2026), not checked against
 # the current price list. Fund fees (TER) are separate: they sit inside each fund's price.
 broker: Trade Republic
 
@@ -12,6 +12,15 @@ withdrawal_fee_eur: 7.00               # transfer to a bank account; one source 
 # In the model: the monthly ETF plan costs nothing to execute. Rebalancing costs 1.00 per
 # order, and the final sale of each holding costs 1.00.
 # Trade Republic also deducts German tax automatically (Abgeltungsteuer, Vorabpauschale).
+
+# Fund fees (TER), percent of the fund's value per year, taken inside the fund's price.
+# My estimates, typical for European ETFs, not checked against factsheets. Approved by the user.
+ter_pct_per_year:
+  msci_world: 0.20
+  sp500: 0.07
+  emerging_markets: 0.18
+  ai_and_big_data: 0.35
+  gold_miners_etf: 0.55
 
 not_modelled:
   - spread and trading-venue costs on each purchase (no sourced figure)

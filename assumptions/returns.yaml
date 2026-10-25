@@ -56,5 +56,4 @@ funds:
 
 open_items:
   - correlations between the funds
-  - TER per fund (broker costs are in costs.yaml)
   - rebalancing policy
