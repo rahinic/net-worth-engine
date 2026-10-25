@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Tax function tests
+        run: python persona/test_tax.py
+        working-directory: .
+      - name: Generator tests
+        run: python -m generator.test_generator
+      - name: Generated data is up to date
+        run: |
+          python -m generator.run
+          git diff --exit-code data dbt/seeds
+      - name: dbt build
+        run: dbt build --project-dir dbt --profiles-dir dbt
+        env:
+          DBT_SEND_ANONYMOUS_USAGE_STATS: "False"

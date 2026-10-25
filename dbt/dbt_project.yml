@@ -1,0 +1,25 @@
+name: net_worth_engine
+version: "1.0.0"
+profile: net_worth
+
+flags:
+  send_anonymous_usage_stats: false
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+
+# Run dbt from the repository root, so these paths resolve from there.
+vars:
+  raw_dir: data/raw
+  truth_dir: data/truth
+
+models:
+  net_worth_engine:
+    +materialized: table
+
+seeds:
+  net_worth_engine:
+    opening_balances:
+      +column_types:
+        opening_eur: decimal(18,2)

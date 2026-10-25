@@ -1,2 +1,7 @@
 __pycache__/
 *.pyc
+.venv/
+data/warehouse.duckdb*
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/

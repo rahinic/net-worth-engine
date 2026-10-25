@@ -5,6 +5,7 @@ Writes, under the output folder:
   raw/savings_account_<start>_<end>.csv   messy export, savings account
   truth/ledger.csv                        clean ledger with running balances
   truth/mess_log.csv                      every injected problem and where it is
+and the dbt seed tables in dbt/seeds/.
 """
 import argparse
 import csv
@@ -15,6 +16,7 @@ import yaml
 
 from generator.bank_csv import make_export, write_salary_csv, write_savings_csv
 from generator.ledger import SALARY, SAVINGS, build_ledger, opening_balances
+from generator.seeds import write_seeds
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -68,3 +70,4 @@ if __name__ == "__main__":
     args = ap.parse_args()
     persona, cfg = load()
     print(generate(persona, cfg, Path(args.out)))
+    write_seeds(persona, cfg, ROOT / "dbt" / "seeds")

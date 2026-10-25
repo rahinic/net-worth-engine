@@ -61,6 +61,29 @@ The three differences are written up in [`docs/data-cleaning-notes.md`](docs/dat
 
 Inflation is 2.6% a year, the average of German CPI over 2016 to 2025 ([`assumptions/inflation.yaml`](assumptions/inflation.yaml)). Savings interest is 2.75% a year, set by the user, and is assumed to sit inside the tax-free allowance. The persona's €12,000 cash starts as €3,000 in the current account and €9,000 in savings, and after each payday the current account is topped up to or swept down to €3,000. Weekdays only, no public holidays.
 
+## Cleaning with dbt
+
+dbt-core on DuckDB turns the two messy exports into one clean ledger and a monthly timeline. Run everything from the repository root:
+
+```
+python3 -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt
+python3 -m generator.run
+dbt build --project-dir dbt --profiles-dir dbt
+```
+
+| Model | What it does |
+|---|---|
+| `stg_salary_account`, `stg_savings_account` | Read each export and handle the three differences: date format, amount columns, preamble. |
+| `int_ledger_clean` | One ledger for both accounts: duplicates dropped, spacing tidied, categories added from the `merchant_categories` seed. |
+| `mart_monthly_cash` | Inflow, outflow and closing balance per account per month. |
+| `mart_net_worth_at_cost` | Month-end net worth at cost: cash plus ETF and gold contributions as paid, with no market movement yet. |
+
+Beyond the usual not-null and accepted-value checks, three tests compare the result with the answer key in `data/truth/`: every cleaned row must match the ledger, the closing balances must match, and the number of dropped rows must equal the duplicates in the mess log. I checked that they fail when the deduplication is broken.
+
+At September 2026 the persona has about €50,000 at cost: €11,200 cash, €32,750 in ETFs and €5,970 in gold.
+
+GitHub Actions (`.github/workflows/ci.yml`) runs the tests, checks the generated data is up to date, and runs `dbt build`.
+
 ## Status
 
-Done: persona version 3, the net-pay function and the bank-statement generator. Planned: dbt models, ETF Monte Carlo and gold comparison. Results will be published at https://rahinic.github.io/net-worth/.
+Done: persona version 3, the net-pay function, the bank-statement generator and the dbt cleaning models. Planned: ETF Monte Carlo and gold comparison. Results will be published at https://rahinic.github.io/net-worth/.

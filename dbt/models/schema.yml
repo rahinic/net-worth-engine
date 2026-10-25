@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: stg_salary_account
+    description: >
+      Salary account export, typed. Handles the three differences from the savings file:
+      dd.mm.yyyy dates, one signed Betrag column, no preamble. See docs/data-cleaning-notes.md.
+    columns:
+      - name: booking_date
+        data_tests: [not_null]
+      - name: amount_eur
+        data_tests: [not_null]
+
+  - name: stg_savings_account
+    description: >
+      Savings account export, typed. Handles the three differences from the salary file:
+      ISO dates, separate Soll and Haben columns, a 4-line preamble before the header.
+    columns:
+      - name: booking_date
+        data_tests: [not_null]
+      - name: amount_eur
+        data_tests: [not_null]
+
+  - name: int_ledger_clean
+    description: One clean ledger for both accounts, duplicates removed, categories added.
+    columns:
+      - name: category
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [salary, fixed, contribution_etf, contribution_gold, sweep, interest,
+                         groceries, dining, transport, leisure, shopping, health, cash, other]
+
+  - name: mart_monthly_cash
+    description: Month by month inflow, outflow and closing balance for each bank account.
+    columns:
+      - name: closing_balance_eur
+        data_tests: [not_null]
+
+  - name: mart_net_worth_at_cost
+    description: >
+      Month-end net worth at cost (cash plus ETF and gold contributions as paid). No market
+      movement; the simulations add that.
+    columns:
+      - name: month_end
+        data_tests: [unique, not_null]

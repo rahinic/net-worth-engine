@@ -12,7 +12,7 @@ Illustrative simulation, synthetic data.
 |---|---|---|---|---|
 | 1 | **Date format** | `31.01.2024` (day.month.year) | `2024-01-31` (ISO) | Parse each file with its own format, then compare as dates. |
 | 2 | **Amount columns** | One signed `Betrag` column, debits negative | Separate `Soll` (debit) and `Haben` (credit) columns, both positive | Build one signed amount: `Haben - Soll`. Check that every row has exactly one of the two. |
-| 3 | **Preamble** | None, the header is the first line | 3 metadata lines and a blank line above the header | Skip 5 lines before the header. Keep `Anfangssaldo` (opening balance) for the balance check. |
+| 3 | **Preamble** | None, the header is the first line | 3 metadata lines and a blank line above the header | Skip the first 4 lines (3 metadata lines and a blank line); the header is line 5. Keep `Anfangssaldo` (opening balance) for the balance check. |
 
 ### What they look like
 
