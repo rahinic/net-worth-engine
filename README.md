@@ -14,6 +14,15 @@ Illustrative simulation using synthetic data. Not financial advice.
 - Each month: €538 ETF savings plan, €90 Indian gold scheme, about €1,210 fixed costs and about €852 variable costs, €2,690 in total.
 - Contributions stay flat in nominal terms.
 
+### ETF portfolios
+
+| Portfolio | Funds |
+|---|---|
+| 2 ETFs | MSCI World and S&P 500, weights not set yet |
+| 4 ETFs (thematic) | MSCI World 50%, Emerging Markets 15%, AI & Big Data 17.5%, Renewable Energy 17.5% |
+
+The monthly ETF savings plan is split by these weights. The starting €15,000 is assumed to be held in the same weights. The AI & Big Data and Renewable Energy funds have short histories, so their return figures will be mostly estimates.
+
 ### Scenarios
 
 | Scenario | Contributions | Returns |
