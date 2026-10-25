@@ -56,12 +56,12 @@ portfolios:
       msci_world: 0.50
       sp500: 0.50
   four_etf_thematic:
-    description: broad world, emerging markets and two themes
+    description: broad world, emerging markets, an AI theme and gold miners
     weights:
       msci_world: 0.50
       emerging_markets: 0.15
       ai_and_big_data: 0.175
-      renewable_energy: 0.175   # weights sum to 1.0
+      gold_miners_etf: 0.175    # weights sum to 1.0
 
 scenarios:
   - id: flat_historical
