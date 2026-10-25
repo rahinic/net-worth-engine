@@ -1,0 +1,9 @@
+scenario,portfolio,paid_in,mean_withdrawn,mean_tax,mean_order_fees,mean_ter,prob_lost_money,prob_withdrawal_shortfall
+flat_historical,two_etf,208680.0,124999.39,89544.75,33.98,8760.92,0.02,0.0
+flat_historical,four_etf_thematic,208680.0,124990.23,74684.9,42.42,16616.12,0.05,0.0
+flat_conservative,two_etf,208680.0,124997.98,48877.02,33.98,6449.93,0.06,0.0
+flat_conservative,four_etf_thematic,208680.0,124941.54,40229.6,42.42,12297.42,0.14,0.01
+growing_historical,two_etf,323676.04,125000.0,115110.66,33.98,11181.59,0.02,0.0
+growing_historical,four_etf_thematic,323676.04,125000.0,97028.43,42.41,21348.21,0.05,0.0
+flat_historical_no_switches,two_etf,208680.0,124999.39,91200.48,10.0,8903.49,0.02,0.0
+flat_historical_no_switches,four_etf_thematic,208680.0,124995.45,75446.18,20.0,16538.45,0.04,0.0

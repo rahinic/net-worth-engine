@@ -1,0 +1,17 @@
+event,month_index,moved_pct_or_amount_eur,weight_shift_points
+switch,9,10.0,5.0
+switch,15,10.0,5.0
+switch,21,10.0,5.0
+switch,33,10.1,5.0
+switch,45,10.0,5.0
+switch,51,10.0,5.0
+switch,63,10.0,5.0
+switch,75,10.0,5.0
+switch,87,10.0,5.0
+switch,99,10.0,5.0
+switch,108,10.0,5.0
+switch,114,10.0,5.0
+withdrawal,144,10000,
+withdrawal,204,41000,
+withdrawal,264,45000,
+withdrawal,324,29000,

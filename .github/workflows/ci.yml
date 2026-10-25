@@ -19,6 +19,8 @@ jobs:
         working-directory: .
       - name: Generator tests
         run: python -m generator.test_generator
+      - name: ETF simulation tests
+        run: python -m simulation.test_etf_mc
       - name: Generated data is up to date
         run: |
           python -m generator.run

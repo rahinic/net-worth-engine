@@ -1,0 +1,6 @@
+case,prob_four_beats_two,median_diff_nominal_eur
+base assumptions,0.21,-63351
+gold miners return 8% (base 5%),0.28,-48017
+gold miners return 10% (base 5%),0.34,-34635
+gold miners return 15.8% (base 5%),0.56,17475
+all fund fees (TER) equal at 0.20%,0.24,-54971

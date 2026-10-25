@@ -1,0 +1,30 @@
+# German tax on ETF gains. Illustrative simulation, not financial advice.
+# Rates are the standard rules; the allowance split and the base rates after 2026 are assumptions.
+
+abgeltungsteuer_pct: 25.0
+soli_pct_of_tax: 5.5            # together 26.375% on taxable gains
+church_tax: false
+
+# Equity funds: 30% of the gain (and of the Vorabpauschale) is exempt. All five funds count
+# as equity funds (gold miners are mining company shares).
+teilfreistellung_pct: 30
+
+# Sparer-Pauschbetrag: tax-free allowance per year. Married couples share 2000; she gets her
+# half (approved). Her savings interest of about 240 a year uses part of it, which leaves the
+# rest for the ETFs.
+sparer_pauschbetrag_eur: 1000
+savings_interest_eur_per_year: 240
+
+# Vorabpauschale: a tax paid every January on accumulating funds, even without a sale. It is
+# 70% of the base rate times the fund's value at the start of the year, capped at the fund's
+# actual gain that year. Tax already paid this way is deducted from the gain when you sell.
+vorabpauschale_fraction_of_basis: 0.70
+basiszins_pct_by_year:
+  2024: 2.29
+  2025: 2.53
+  2026: 3.20          # reported by one source; not confirmed against the official letter
+basiszins_pct_after_2026: 2.5   # my estimate
+
+sources:
+  - https://etf.capital/vorabpauschale/
+  - https://www.lohnsteuer-kompakt.de/steuerwissen/investmentertraege-vorabpauschale-fuer-thesaurierende-fonds-2025-und-2026

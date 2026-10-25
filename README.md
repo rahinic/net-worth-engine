@@ -112,6 +112,23 @@ In the Monte Carlo, correlation decides whether the funds crash together in the 
 High correlations mean the 4-ETF mix is less diversified than it looks; low ones mean smoother outcomes.
 In a real crash correlations tend to rise, so the calm-period estimates in [`assumptions/correlations.yaml`](assumptions/correlations.yaml) flatter diversification.
 
+## ETF simulation: first results
+
+`python3 -m simulation.etf_mc` runs 10,000 paths for each scenario on both portfolios in about 5 seconds and writes CSVs to `data/results/`. Tests: `python3 -m simulation.test_etf_mc`. The assumptions are in `assumptions/`, the German tax rules in [`assumptions/german_tax.yaml`](assumptions/german_tax.yaml) (Abgeltungsteuer, Teilfreistellung, Vorabpauschale, allowance, loss pot).
+
+**Flat contributions, historical returns, after tax, final value after 30 years** (paid in: €208,680 plus €15,000 at the start; about €125,000 withdrawn and spent along the way):
+
+| | 5th percentile | Median | 95th percentile | Median in today's money |
+|---|---|---|---|---|
+| 2 ETFs (World + S&P 500) | €121,000 | €384,000 | €1,287,000 | €178,000 |
+| 4 ETFs (World, EM, AI, gold miners) | €81,000 | €304,000 | €1,195,000 | €141,000 |
+
+The 4-ETF mix ends ahead of the 2-ETF mix in **21%** of paths; the median gap is about -€63,000 (-€29,000 in today's money). The other scenarios tell the same story: 21% with conservative returns and 22% when contributions grow with salary. Her switching between ETFs in the first decade is random in each path, so these numbers average over the ways she might have switched. With no switching at all it is 18%.
+
+**This result depends on my assumptions, not on a law of nature.** It is driven mostly by the return I assumed for gold miners (5%, their return since 2006). At 8% the 4-ETF mix wins 28% of paths, at 10% 34%, and at their last-ten-year return of 15.8% it wins 56% and the median gap turns positive (+€17,000). Making all fund fees equal changes little (24%). See `data/results/etf_sensitivity.csv`, reproduce with `python3 -m simulation.sensitivity`.
+
+Known limits: returns are lognormal, so extreme crashes are understated; gold miners are not yet tied to the gold model; cost basis is an average per fund; the 2026 base rate for the Vorabpauschale is unverified; and the figures are illustrative, not advice.
+
 ## Status
 
-Done: persona version 3, the net-pay function, the bank-statement generator and the dbt cleaning models. Planned: ETF Monte Carlo and gold comparison. Results will be published at https://rahinic.github.io/net-worth/.
+Done: persona version 3, the net-pay function, the bank-statement generator, the dbt cleaning models and the ETF Monte Carlo. Planned: the gold comparison and the dashboards. Results will be published at https://rahinic.github.io/net-worth/.

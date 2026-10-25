@@ -1,0 +1,9 @@
+scenario,basis,prob_four_beats_two,diff_p5,diff_p25,diff_p50,diff_p75,diff_p95
+flat_historical,nominal,0.21,-374299.01,-141747.89,-63350.55,-11632.58,192753.6
+flat_historical,real,0.21,-173299.72,-65629.0,-29331.18,-5385.86,89244.54
+flat_conservative,nominal,0.21,-232030.07,-89492.33,-40916.59,-7659.14,118993.02
+flat_conservative,real,0.21,-107429.47,-41434.77,-18944.3,-3546.17,55093.54
+growing_historical,nominal,0.22,-444325.07,-174429.85,-80293.44,-12877.01,237898.82
+growing_historical,real,0.22,-205721.65,-80760.68,-37175.71,-5962.03,110146.7
+flat_historical_no_switches,nominal,0.18,-312330.7,-135198.14,-67239.43,-20194.73,129573.9
+flat_historical_no_switches,real,0.18,-144608.51,-62596.48,-31131.73,-9350.12,59992.46
